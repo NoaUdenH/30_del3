@@ -1,5 +1,5 @@
 package JuniorMatador;
 
 public class Spil {
-    // test af commi
+    // Main - run game
 }

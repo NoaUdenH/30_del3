@@ -5,7 +5,7 @@ import gui_codebehind.GUI_FieldFactory;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-
+/*Malaz Står for det */
 public class Field_Test {
     
 

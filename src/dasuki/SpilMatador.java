@@ -1,6 +1,11 @@
 package dasuki;
 
 // Matadorspil for to spillere
+import dasuki.Spiller;
+import dasuki.Start;
+import dasuki.Gade;
+import dasuki.Helle;
+import dasuki.Rederi;
 
 import java.util.Vector;
 

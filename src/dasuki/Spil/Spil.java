@@ -13,7 +13,7 @@ public class Spil {
     private boolean isOutOfGame = false;
     private static int startingPoint = 20;
     private final static int startingField = 0;
-    int maxPlayers = 4; //TODO- få den ændret så man kan bestemme spillere imellem 2-5..
+    int maxPlayers = 2; //TODO- få den ændret så man kan bestemme spillere imellem 2-5..
 
     public void GameStartingPoint(int maxPlayers) {
         if (maxPlayers == 2) {

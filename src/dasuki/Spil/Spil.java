@@ -74,5 +74,22 @@ public class Spil {
             }
             i++;
         } while (!isOutOfGame);
+/*
+        //metode der skal finde ud af den spiller med flest penge
+        public void rigesteSpiller(){
+            temp;
+            for (int i = 0; i <= maxPlayers; i++){
+                if (players[i]<players[i+1]){
+
+                }
+
+                String temp = players[i];
+
+
+            }
+        }
+
+ */
     }
+
 }

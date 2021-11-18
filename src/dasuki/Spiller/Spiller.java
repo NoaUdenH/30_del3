@@ -29,7 +29,7 @@ public class Spiller {
     }
 
     //Metode for spilleregel for maks antal eget ejendomme.
-    public void opdaterSolgtSkilte(){
+    public int opdaterSolgtSkilte(){
         this.solgtSkilte= this.solgtSkilte - 1;
         return this.solgtSkilte;
     }

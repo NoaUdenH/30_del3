@@ -9,7 +9,7 @@ public class SpilInfo {
         addHus(1, "Start", "Du vil modtage 2 når du passerer dette felt!", 0, Color.WHITE);
         addHus(2, "BURGERBAREN", "Du ser sulten ud, få købt dig en burger..!", 1, new Color(189, 122, 55));
         addHus(3, "PIZZARIAET", "Du ligner en der har brug for en ordentlig Shawarma..!", 1, new Color(189, 122, 55));
-        addHus(4, "CHANCE", "Du får en chance..", 0, Color.WHITE);
+        addHus(4, "CHANCE", "Du får en chance..", 0, Color.GRAY);
         addHus(5, "SLIKBUTIKKEN", "Få dig noget sødt her i slikbutikken..", 1, new Color(127, 196, 217));
         addHus(6, "ISKIOSKEN", "Få dig noget der er cremet samtidig sødt..",1, new Color(127, 196, 217));
         addHus(7, "I FÆNGSEL\nPAA BESØG", "Ved du hvor du er henne..?",0, Color.GRAY);
@@ -18,7 +18,7 @@ public class SpilInfo {
         addHus(10, "CHANCE", "Du får endnu en chance..",0, Color.GRAY);
         addHus(11, "SKATEPARKEN", "Få dig hygget lidt med kammeraterne på skateparken..", 2, new Color(220, 129, 38));
         addHus(12, "SWIMMINGPOOLEN", "Keder du dig, så dyk ned i poolen..", 2, new Color(220, 129, 38));
-        addHus(13, "GRATIS PARKERING\n", "Du kan parkere her uden bekymringer..",0, Color.WHITE);
+        addHus(13, "GRATIS PARKERING\n", "Du kan parkere her uden bekymringer..",0, Color.GRAY);
         addHus(14, "SPILLEHALLEN", "Er det en god ide..?", 3, new Color(140, 5, 5));
         addHus(15, "BIOGRAFEN", "Det ville være rart, at få set en film..", 3, new Color(140, 5, 5));
         addHus(16, "CHANCE", "Du får squ endnu en chance..",0, Color.GRAY);

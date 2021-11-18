@@ -17,11 +17,14 @@ public class Spil {
 
     public void GameStartingPoint(int maxPlayers) {
         if (maxPlayers == 2) {
+            //Hver spiller får 20 point.
             startingPoint = 20;
         } else if (maxPlayers == 3) {
-            startingPoint = 20;
+            //Hver spiller får 18 point.
+            startingPoint = 18;
         } else if (maxPlayers == 4) {
-            startingPoint = 20;
+            //Hver spiller får 16 point.
+            startingPoint = 16;
         }
     }
 
@@ -62,14 +65,14 @@ public class Spil {
         Kort kort = new Kort(1);
         kort.shuffle(10);
         Operation op = new Operation();
-            if (!isOutOfGame) do {
-                x = i % maxPlayers;
-                Spiller playersTurn = players.get(x);
-                op.Operation(playersTurn, raffle, programHandler, kort);
-                if (playersTurn.isLost()) {
-                    isOutOfGame = true;
-                }
-                i++;
-            } while (!isOutOfGame);
+        if (!isOutOfGame) do {
+            x = i % maxPlayers;
+            Spiller playersTurn = players.get(x);
+            op.Operation(playersTurn, raffle, programHandler, kort);
+            if (playersTurn.isLost()) {
+                isOutOfGame = true;
+            }
+            i++;
+        } while (!isOutOfGame);
     }
 }

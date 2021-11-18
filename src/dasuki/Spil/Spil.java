@@ -19,9 +19,9 @@ public class Spil {
         if (maxPlayers == 2) {
             startingPoint = 20;
         } else if (maxPlayers == 3) {
-            startingPoint = 18;
+            startingPoint = 20;
         } else if (maxPlayers == 4) {
-            startingPoint = 16;
+            startingPoint = 20;
         }
     }
 

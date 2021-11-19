@@ -1,20 +1,14 @@
 package dasuki.Terning;
 
-import java.util.Random;
-
 public class Terning {
+    private int værdi;
+    double antalSider = 6.0;
 
-    private int faceValue, sides;
-    private final int terningEdges = 6;
-
-    public Terning() {
-        sides = terningEdges;
+    public int kast() {
+        return this.værdi = (int) (Math.random() * antalSider) + 1;
     }
 
-    public void isRolling() {
-        Random random = new Random();
-        faceValue = random.nextInt(sides)+1;
+    public int getVærdi() {
+        return this.værdi;
     }
-
-    public int getFaceValue() { return faceValue; }
 }

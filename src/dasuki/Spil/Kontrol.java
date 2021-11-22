@@ -23,7 +23,7 @@ public class Kontrol {
         terning.kast();
     }
 
-    public void spilkontrol() {
+    public void spilleKontrol() {
         spilleplade.sendBesked("Monopoly Junior");
         opretSpillere();
         spil = new Spil(spillerliste, spilleplade);
@@ -39,15 +39,15 @@ public class Kontrol {
     }
 
     public void opretSpillere() {
-        int antalSpillere = spilleplade.getAntalSpiller();
-        spillerliste = new Spillerliste(antalSpillere);
+        int spillerAntal = spilleplade.getSpillerAntal();
+        spillerliste = new Spillerliste(spillerAntal);
 
         // opretter spillerliste med input fra gui'en
-        for (int i = 0; i < antalSpillere; i++) {
+        for (int i = 0; i < spillerAntal; i++) {
             int startBeløb;
-            if (antalSpillere == 2)
+            if (spillerAntal == 2)
                 startBeløb = 20;
-            else if (antalSpillere == 3)
+            else if (spillerAntal == 3)
                 startBeløb = 18;
             else
                 startBeløb = 16;

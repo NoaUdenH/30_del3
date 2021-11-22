@@ -79,7 +79,7 @@ public class Spilleplade {
 
      */
 
-    public int getAntalSpiller() {
+    public int getSpillerAntal() {
         return gui.getUserInteger("Vælg antal spillere", 2, 4);
     }
 

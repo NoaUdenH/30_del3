@@ -1,14 +1,14 @@
 package dasuki.Terning;
 
 public class Terning {
-    private int værdi;
-    double antalSider = 6.0;
+    private int øjne;
+    int terningSider = 6;
 
     public int kast() {
-        return this.værdi = (int) (Math.random() * antalSider) + 1;
+        return this.øjne = (int) (Math.random() * terningSider) + 1;
     }
 
-    public int getVærdi() {
-        return this.værdi;
+    public int getØjne() {
+        return this.øjne;
     }
 }

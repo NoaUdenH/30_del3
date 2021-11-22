@@ -27,7 +27,7 @@ public class Spil {
 
     public void udførSpillerTur(Terning terning, Spiller aktivSpiller)
     {
-        int slag = terning.getVærdi();
+        int slag = terning.getØjne();
         String besked = aktivSpiller.getNavn();
 
         int gammelPosition = aktivSpiller.getPosition();

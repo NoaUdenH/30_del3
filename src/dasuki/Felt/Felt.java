@@ -20,7 +20,7 @@ public class Felt {
         this.ejer = ejer;
     }
 
-    public Color getFarvePunkt() { return farvePunkt; }
+    //public Color getFarvePunkt() { return farvePunkt; }
 
     public String getFeltNavn() {return feltNavn; }
     //Metode der giver felt et navn.
@@ -28,8 +28,8 @@ public class Felt {
         this.feltNavn = feltNavn;
     }
 
-    public String getTekst() {        return tekst;    }
-    public String getDescription() { return beskrivelse; }
+    //public String getTekst() {        return tekst;    }
+    //public String getDescription() { return beskrivelse; }
 
     public String getBeskrivelse() { return beskrivelse; }
     //Metode der giver felt en beskrivelse.
@@ -40,7 +40,7 @@ public class Felt {
     public String toString() {
         return "";
     }
-    public int getFeltNummer() { return feltNummer; }
+    //public int getFeltNummer() { return feltNummer; }
     public int getPris() { return pris; }
     //Metode der giver felt en pris.
     public void setPris(int pris){

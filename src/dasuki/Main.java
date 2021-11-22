@@ -15,7 +15,7 @@ public class Main {
 
          */
         Kontrol c = new Kontrol();
-        c.spilleKontrol();
+        c.spilKontrol();
     }
 
 }

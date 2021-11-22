@@ -12,50 +12,52 @@ import java.awt.Color;
 
 public class Kontrol {
 
-    private Spillerliste spillerliste;
-    private Spilleplade spilleplade;
+    private Spillerliste listeAfSpillere;
+    private Spilleplade plade;
     private Terning terning;
     private Spil spil;
 
     public Kontrol() {
-        spilleplade = new Spilleplade();
+        plade = new Spilleplade();
         terning = new Terning();
         terning.kast();
     }
 
-    public void spilleKontrol() {
-        spilleplade.sendBesked("Monopoly Junior");
+    public void spilKontrol() {
+        plade.sendBesked("Monopoly Junior");
         opretSpillere();
-        spil = new Spil(spillerliste, spilleplade);
+        spil = new Spil(listeAfSpillere, plade);
 
-        int nutidigSpillerInt = -1;
+        int nuværendeSpillere = -1;
         do {
-            nutidigSpillerInt = (nutidigSpillerInt + 1) % spillerliste.antalAfSpiller();
-            spilleplade.setTerning(terning.kast());
-            spil.udførSpillerTur(terning, spillerliste.getSpiller(nutidigSpillerInt));
+            nuværendeSpillere = (nuværendeSpillere + 1) % listeAfSpillere.antalAfSpiller();
+            plade.setTerning(terning.kast());
+            spil.spillerHandling(terning, listeAfSpillere.getSpiller(nuværendeSpillere));
 
-        } while (!spillerliste.getSpiller(nutidigSpillerInt).isLost());
+        } while (!listeAfSpillere.getSpiller(nuværendeSpillere).isLost());
 
     }
 
     public void opretSpillere() {
-        int spillerAntal = spilleplade.getSpillerAntal();
-        spillerliste = new Spillerliste(spillerAntal);
+        int spillerAntal = plade.addAntalSpillere();
+        listeAfSpillere = new Spillerliste(spillerAntal);
 
-        // opretter spillerliste med input fra gui'en
+        //Opretter spillerliste med input fra bruger gennem GUI.
         for (int i = 0; i < spillerAntal; i++) {
-            int startBeløb;
+            int startPoint;
             if (spillerAntal == 2)
-                startBeløb = 20;
+                startPoint = 20;
             else if (spillerAntal == 3)
-                startBeløb = 18;
+                startPoint = 18;
             else
-                startBeløb = 16;
+                startPoint = 16;
 
-            String navn = spilleplade.getNavn();
+            String navn = plade.getNavn();
+            //Hvis reglen med alder laves skaldet ses sådan ca. ud.
             // int alder = spillebræt.hentAlder();
-            int farve = spilleplade.getBilFarve();
+            int farve = plade.getBilFarve();
 
+            //Spillere vælger hvilken bil(farve) de vil have gennem GUI.
             Color farve1;
             Color farve2;
             if (farve == 1) {
@@ -74,10 +76,9 @@ public class Kontrol {
                 farve1 = Color.BLUE;
                 farve2 = Color.white;
             }
-
-                Spiller spiller = new Spiller(navn, new Bil(farve1, farve2), new Konto(startBeløb));
-                spillerliste.addSpiller(spiller, i);
-                GUI_Player player = spilleplade.addSpillerTilPladen(spiller);
+                Spiller spiller = new Spiller(navn, new Bil(farve1, farve2), new Konto(startPoint));
+                listeAfSpillere.addSpiller(spiller, i);
+                GUI_Player player = plade.addSpillerTilPladen(spiller);
                 spiller.setGUI_Player(player);
                 spiller.opdaterSpiller();
             }

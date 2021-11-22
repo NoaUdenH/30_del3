@@ -8,10 +8,10 @@ public class Konto {
         this.penge = penge;
     }
 
-    public int getKonto() { return penge; }
+    public int getBalance() { return penge; }
 
     //bruges til at sættes konto i 0.
-    public void setPenge(int penge) {
+    public void setFallit(int penge) {
         this.penge = penge;
     }
 
@@ -20,9 +20,9 @@ public class Konto {
     }
 
     public void tagPenge(int penge){
-        int temp = getKonto() - penge;
+        int temp = getBalance() - penge;
         if (temp < 0){
-            setPenge(0);
+            setFallit(0);
         } else {
             this.penge = this.penge - penge;
         }

@@ -79,7 +79,7 @@ public class Spilleplade {
 
      */
 
-    public int getSpillerAntal() {
+    public int addAntalSpillere() {
         return gui.getUserInteger("Vælg antal spillere", 2, 4);
     }
 
@@ -91,7 +91,7 @@ public class Spilleplade {
      */
 
     public GUI_Player addSpillerTilPladen(Spiller spiller) {
-        GUI_Player player = new GUI_Player(spiller.getNavn(), spiller.getKonto().getKonto(), spiller.getCars().getBil());
+        GUI_Player player = new GUI_Player(spiller.getNavn(), spiller.getKonto().getBalance(), spiller.getBil().getBil());
         gui.addPlayer(player);
         return player;
     }

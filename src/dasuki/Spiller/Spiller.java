@@ -2,8 +2,6 @@ package dasuki.Spiller;
 
 import gui_fields.GUI_Player;
 
-import java.util.ArrayList;
-
 public class Spiller {
 
     private Konto konto;
@@ -19,7 +17,7 @@ public class Spiller {
     public String getNavn() { return navn; }
     public void setNavn(String navn) {
         this.navn = navn; }
-    public Bil getCars() { return bil;}
+    public Bil getBil() { return bil;}
     public void UpdatePosition(int value) {
         position = (position + value) % 24;
     }
@@ -47,7 +45,7 @@ public class Spiller {
 
 
     public void opdaterSpiller() {
-        spiller.setBalance(konto.getKonto());
+        spiller.setBalance(konto.getBalance());
     }
 
     public Spiller(String navn, Bil bil, Konto konto) {

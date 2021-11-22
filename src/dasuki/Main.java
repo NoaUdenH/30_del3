@@ -1,6 +1,6 @@
 package dasuki;
 
-import dasuki.Spil.Controller;
+import dasuki.Spil.Kontrol;
 
 public class Main {
 
@@ -14,7 +14,7 @@ public class Main {
         }
 
          */
-        Controller c = new Controller();
+        Kontrol c = new Kontrol();
         c.spilkontrol();
     }
 

@@ -10,14 +10,14 @@ import gui_fields.GUI_Player;
 
 import java.awt.Color;
 
-public class Controller {
+public class Kontrol {
 
     private Spillerliste spillerliste;
     private Spilleplade spilleplade;
     private Terning terning;
     private Spil spil;
 
-    public Controller() {
+    public Kontrol() {
         spilleplade = new Spilleplade();
         terning = new Terning();
         terning.kast();

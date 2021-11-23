@@ -1,6 +1,5 @@
-package dasuki.Felt;
+package matadorJuniorSpil.genstand;
 
-import dasuki.Spiller.Spiller;
 
 import java.awt.*;
 

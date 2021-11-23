@@ -1,4 +1,4 @@
-package dasuki.Spiller;
+package matadorJuniorSpil.genstand;
 
 public class Konto {
 

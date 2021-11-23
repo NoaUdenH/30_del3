@@ -1,6 +1,6 @@
-package dasuki;
+package matadorJuniorSpil;
 
-import dasuki.Spil.Kontrol;
+import matadorJuniorSpil.Spil.Kontrol;
 
 public class Main {
 
@@ -14,8 +14,8 @@ public class Main {
         }
 
          */
-        Kontrol c = new Kontrol();
-        c.spilKontrol();
+        Kontrol startSpil = new Kontrol();
+        startSpil.spilKontrol();
     }
 
 }

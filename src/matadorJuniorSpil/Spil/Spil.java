@@ -1,12 +1,12 @@
-package dasuki.Spil;
+package matadorJuniorSpil.Spil;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import dasuki.Felt.Felt;
-import dasuki.Felt.Felter;
-import dasuki.Spiller.Spiller;
-import dasuki.Spiller.Spillerliste;
-import dasuki.Terning.Terning;
+import matadorJuniorSpil.genstand.Felt;
+import matadorJuniorSpil.genstand.Felter;
+import matadorJuniorSpil.genstand.Spiller;
+import matadorJuniorSpil.genstand.Spillerliste;
+import matadorJuniorSpil.genstand.Terning;
 import gui_fields.GUI_Chance;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Refuge;

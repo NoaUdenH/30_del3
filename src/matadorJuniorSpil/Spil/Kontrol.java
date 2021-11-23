@@ -1,11 +1,10 @@
-package dasuki.Spil;
+package matadorJuniorSpil.Spil;
 
-import dasuki.Spiller.Bil;
-
-import dasuki.Spiller.Konto;
-import dasuki.Spiller.Spiller;
-import dasuki.Spiller.Spillerliste;
-import dasuki.Terning.Terning;
+import matadorJuniorSpil.genstand.Bil;
+import matadorJuniorSpil.genstand.Konto;
+import matadorJuniorSpil.genstand.Spiller;
+import matadorJuniorSpil.genstand.Spillerliste;
+import matadorJuniorSpil.genstand.Terning;
 import gui_fields.GUI_Player;
 
 import java.awt.Color;

@@ -1,4 +1,4 @@
-package dasuki.Spiller;
+package matadorJuniorSpil.genstand;
 
 import gui_fields.GUI_Player;
 

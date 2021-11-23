@@ -1,4 +1,4 @@
-package dasuki.Terning;
+package matadorJuniorSpil.genstand;
 
 public class Terning {
     private int øjne;

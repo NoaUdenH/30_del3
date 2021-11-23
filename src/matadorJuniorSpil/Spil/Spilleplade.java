@@ -1,8 +1,8 @@
-package dasuki.Spil;
+package matadorJuniorSpil.Spil;
 
-import dasuki.Felt.Felt;
-import dasuki.Felt.Felter;
-import dasuki.Spiller.Spiller;
+import matadorJuniorSpil.genstand.Felt;
+import matadorJuniorSpil.genstand.Felter;
+import matadorJuniorSpil.genstand.Spiller;
 import gui_fields.*;
 import gui_main.GUI;
 

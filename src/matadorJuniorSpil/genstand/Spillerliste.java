@@ -3,31 +3,27 @@ package matadorJuniorSpil.genstand;
 import java.util.Arrays;
 
 public class Spillerliste {
-    private Spiller[] spiller;
+    private Spiller[] sListe;
 
     public Spillerliste(int antalAfSpiller) {
-        this.spiller = new Spiller[antalAfSpiller];
+        this.sListe = new Spiller[antalAfSpiller];
     }
 
     public void addSpiller(Spiller spiller, int i){
-        this.spiller[i] = spiller;
+        this.sListe[i] = spiller;
     }
 
     public Spiller getSpiller(int i) {
-        return spiller[i];
+        return sListe[i];
     }
 
     public int antalAfSpiller() {
-        return spiller.length;
-    }
-
-    //Metode der kan sortere penge ikke lavet!!!
-    public void sorterEfterPenge() {
+        return sListe.length;
     }
 
     @Override
     public String toString() {
-        return "Spillerliste: " + Arrays.toString(spiller);
+        return "Spillerliste: " + Arrays.toString(sListe);
     }
 
 }

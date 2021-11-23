@@ -45,16 +45,13 @@ public class Spiller {
 
 
     public void opdaterSpiller() {
-        spiller.setBalance(konto.getBalance());
+        spiller.setBalance(konto.getSaldo());
     }
 
     public Spiller(String navn, Bil bil, Konto konto) {
         this.navn = navn;
         this.bil = bil;
         this.konto = konto;
-        //position = startingPosition;
-        //husPris = new ArrayList<>();
-        //konto = new Konto(startingPengebeholdning);
     }
 
     @Override

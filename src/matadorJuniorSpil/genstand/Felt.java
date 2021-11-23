@@ -5,10 +5,9 @@ import java.awt.*;
 
 public class Felt {
 
-    private int pris, feltNummer;
-    private String feltNavn, beskrivelse, tekst;
-    private Color farvePunkt;
-    private String underBeskrivelse;
+    private int pris;
+    private String feltNavn, beskrivelse;
+    private String prisUdskrift;
     private Color farve;
     private Spiller ejer;
 
@@ -45,10 +44,10 @@ public class Felt {
     public void setPris(int pris){
         this.pris = pris;
     }
-    public String getUnderBeskrivelse(){return underBeskrivelse;}
+    public String getPrisUdskrift(){return prisUdskrift;}
     //Metode der giver felt en under beskrivelse.
-    public void setUnderBeskrivelse(String underBeskrivelse){
-        this.underBeskrivelse = underBeskrivelse;
+    public void setPrisUdskrift(String prisUdskrift){
+        this.prisUdskrift = prisUdskrift;
     }
     public Color getFarve() {
         return farve;
@@ -56,14 +55,5 @@ public class Felt {
     public void setFarve(Color farve) {
         this.farve = farve;
     }
-/*
-    private Felt(int feltNummer, String feltNavn, String beskrivelse, int pris, Color farvePunkt) {
-        this.feltNummer = feltNummer;
-        this.feltNavn = feltNavn;
-        this.beskrivelse = beskrivelse;
-        this.pris = pris;
-        this.farvePunkt = farvePunkt;
-    }
 
- */
 }

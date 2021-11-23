@@ -39,10 +39,10 @@ public class Spilleplade {
                 ((GUI_Street) felter[i]).setRent("M" + feltInfo[i].getPris());
                 felter[i].setBackGroundColor(feltInfo[i].getFarve());
             }
-
+            //Tilføjer feltnavn, beskrivelse og pris på spillerplade GUI
             felter[i].setTitle(feltInfo[i].getFeltNavn());
             felter[i].setDescription(feltInfo[i].getBeskrivelse());
-            felter[i].setSubText(feltInfo[i].getUnderBeskrivelse());
+            felter[i].setSubText(feltInfo[i].getPrisUdskrift());
         }
 
         gui = new GUI(felter);
@@ -91,7 +91,7 @@ public class Spilleplade {
      */
 
     public GUI_Player addSpillerTilPladen(Spiller spiller) {
-        GUI_Player player = new GUI_Player(spiller.getNavn(), spiller.getKonto().getBalance(), spiller.getBil().getBil());
+        GUI_Player player = new GUI_Player(spiller.getNavn(), spiller.getKonto().getSaldo(), spiller.getBil().getBil());
         gui.addPlayer(player);
         return player;
     }

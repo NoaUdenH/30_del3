@@ -114,13 +114,13 @@ public class Spil {
         if (!besked.equals(spiller.getNavn()))
             plade.sendBesked(besked);
 
-        if(spiller.getKonto().getBalance() == 0) {
+        if(spiller.getKonto().getSaldo() == 0) {
             plade.sendBesked(spiller.getNavn() + " har tabt spillet..");
             spiller.setIsLost(true);
 
             ArrayList<Integer> placeringer = new ArrayList<Integer>();
             for(int i = 0; i < spillere.antalAfSpiller(); i++) {
-                placeringer.add(spillere.getSpiller(i).getKonto().getBalance());
+                placeringer.add(spillere.getSpiller(i).getKonto().getSaldo());
             }
 
             Collections.sort(placeringer);

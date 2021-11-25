@@ -1,4 +1,4 @@
-package matadorJuniorSpil.Spil;
+package matadorJuniorSpil.spil;
 
 import matadorJuniorSpil.genstand.Felt;
 import matadorJuniorSpil.genstand.Felter;

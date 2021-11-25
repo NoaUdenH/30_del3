@@ -1,6 +1,6 @@
 package matadorJuniorSpil;
 
-import matadorJuniorSpil.Spil.Kontrol;
+import matadorJuniorSpil.spil.Kontrol;
 
 public class Main {
 

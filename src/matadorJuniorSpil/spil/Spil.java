@@ -1,4 +1,4 @@
-package matadorJuniorSpil.Spil;
+package matadorJuniorSpil.spil;
 
 import java.util.ArrayList;
 import java.util.Collections;

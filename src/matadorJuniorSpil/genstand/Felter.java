@@ -16,15 +16,15 @@ public class Felter {
         felter[1] = new Felt();
         felter[1].setFeltNavn("Burgerbaren");
         felter[1].setPris(1);
-        felter[1].setBeskrivelse("Slidte men loyale McDonald <3");
+        felter[1].setBeskrivelse("Slidte men loyale McDonalds <3");
         felter[1].setFarve(Color.DARK_GRAY);
         felter[1].setPrisUdskrift("M1");
 
 
         felter[2] = new Felt();
-        felter[2].setFeltNavn("Pizzariaet");
+        felter[2].setFeltNavn("Pizzeriaet");
         felter[2].setPris(1);
-        felter[2].setBeskrivelse("Stedet med sindsyg salatpizza med kebab");
+        felter[2].setBeskrivelse("Stedet med sindssyg salatpizza med kebab");
         felter[2].setFarve(Color.DARK_GRAY);
         felter[2].setPrisUdskrift("M1");
 
@@ -45,40 +45,40 @@ public class Felter {
         felter[5] = new Felt();
         felter[5].setFeltNavn("Iskiosken");
         felter[5].setPris(1);
-        felter[5].setBeskrivelse("Stedet med rebull sorbet");
+        felter[5].setBeskrivelse("Stedet med Redbull sorbet");
         felter[5].setFarve(Color.CYAN);
         felter[5].setPrisUdskrift("M1");
 
         felter[6] = new Felt();
         felter[6].setFeltNavn("I fængsel");
         felter[6].setPris(-1);
-        felter[6].setBeskrivelse("Besøg holdet der bag tremmer");
+        felter[6].setBeskrivelse("Besøg holdet bag tremmer");
         felter[6].setPrisUdskrift("");
 
         felter[7] = new Felt();
         felter[7].setFeltNavn("Museet");
         felter[7].setPris(2);
-        felter[7].setBeskrivelse("Udstilling af banan med værdi af millioner");
+        felter[7].setBeskrivelse("Udstilling af en banan med værdi af millioner");
         felter[7].setFarve(Color.PINK);
         felter[7].setPrisUdskrift("M2");
 
         felter[8] = new Felt();
         felter[8].setFeltNavn("Biblioteket");
         felter[8].setPris(2);
-        felter[8].setBeskrivelse("Shhhh");
+        felter[8].setBeskrivelse("Shhhh...");
         felter[8].setFarve(Color.PINK);
         felter[8].setPrisUdskrift("M2");
 
         felter[9] = new Felt();
         felter[9].setFeltNavn("Chance");
         felter[9].setPris(-1);
-        felter[9].setBeskrivelse("ludomani.dk, pls stop inden det forsent");
+        felter[9].setBeskrivelse("ludomani.dk, pls stop inden det er for sent");
         felter[9].setPrisUdskrift("");
 
         felter[10] = new Felt();
         felter[10].setFeltNavn("Skaterparken");
         felter[10].setPris(2);
-        felter[10].setBeskrivelse("Tony Hawk");
+        felter[10].setBeskrivelse("Tony Hawks Pro Skater");
         felter[10].setFarve(Color.ORANGE);
         felter[10].setPrisUdskrift("M2");
 
@@ -145,7 +145,7 @@ public class Felter {
         felter[20] = new Felt();
         felter[20].setFeltNavn("Zoo");
         felter[20].setPris(4);
-        felter[20].setBeskrivelse("Madagascar pingviner på aktion");
+        felter[20].setBeskrivelse("Madagascar pingviner på mission");
         felter[20].setFarve(Color.GREEN);
         felter[20].setPrisUdskrift("M4");
 

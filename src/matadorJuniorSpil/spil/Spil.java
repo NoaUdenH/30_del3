@@ -15,13 +15,12 @@ import gui_fields.GUI_Street;
 public class Spil {
     private Spillerliste spillere;
     private Spilleplade plade;
-    //private ChancekortBunke chancekortBunke;
     private Felt[] feltInfo;
 
+    //Constructor for Spil med 2 variabler, spillere og plade
     public Spil(Spillerliste spillere, Spilleplade plade) {
         this.spillere = spillere;
         this.plade = plade;
-        //this.chancekortBunke = chancekortBunke;
         feltInfo = Felter.getFelter();
     }
 
@@ -29,14 +28,14 @@ public class Spil {
     public void spillerHandling(Terning terning, Spiller spiller)
     {
         int kast = terning.getØjne();
-        String besked = spiller.getNavn();
+        String meddelelse = spiller.getNavn();
 
         int forrigePosition = spiller.getPosition();
         int nyePosition = (forrigePosition + kast);
 
         if (nyePosition >= plade.getFelter().length)
         {
-            plade.sendBesked(besked + " har passeret start og modtaget M2");
+            plade.sendMeddelelse(meddelelse + " Modtagere M2 for passering af start");
             spiller.getKonto().givPenge(2);
             nyePosition -= plade.getFelter().length;
         }
@@ -45,37 +44,34 @@ public class Spil {
         plade.getFelt(forrigePosition).setCar(spiller.getGUI_PLayer(), false);
         //Opdater spiller nye position.
         spiller.opdaterPosition(nyePosition);
-
         GUI_Field landetFelt = plade.getFelt(nyePosition);
         String landetFeltNavn = landetFelt.getTitle();
 
 
-        if (landetFeltNavn == "Start")
-        {
-
+        if (landetFeltNavn == "Start") {
         }
         else if (landetFelt instanceof GUI_Chance) {
-            int random = (int) (Math.random()*2)+1;
-            if(random == 1 ) {
+            int tilfældig = (int) (Math.random()*2)+1;
+            if(tilfældig == 1 ) {
                 spiller.getKonto().givPenge(1);
-                besked += " er landet på chancen! de modtager M1";
-            } else if(random == 2) {
+                meddelelse += " landet på chancen, modtager derned M1";
+            } else if(tilfældig == 2) {
                 spiller.getKonto().tagPenge(1);
-                besked += " er landet på chancen! der trækkes M1 fra kontoen";
+                meddelelse += " landet på chancen, mister dermed M1";
             }
         }
         else if (landetFelt instanceof GUI_Refuge)
-            // Parkeringspladsen er gratis.
-            besked += " parkerer gratis.";
+            // Parkerings feltet er gratis
+            meddelelse += " gratis parkering";
         else if (landetFelt == plade.getFelt(6))
-            // På besøg.
-            besked += " er på besøg i fængslet.";
+            // På besøg i fængsel
+            meddelelse += " fængsels besøg";
         else if (landetFelt == plade.getFelt(18))
         {
             nyePosition = 6;
             landetFelt = plade.getFelt(nyePosition);
             spiller.opdaterPosition(nyePosition);
-            besked += " ryger direkte i fængsel.";
+            meddelelse += " skal i fængsel";
         }
         else if (landetFelt instanceof GUI_Street){
             String ejerNavn = ((GUI_Street) landetFelt).getOwnerName();
@@ -88,15 +84,15 @@ public class Spil {
                 {
                     spiller.getKonto().tagPenge(pris);
                     ejer.getKonto().givPenge(pris);
-                    ejer.opdaterSpiller();
-                    besked += " er landet på " + landetFelt.getTitle() +
-                            " som tilhører " + ejerNavn +
-                            ", og har betalt dem M" + pris;
+                    ejer.opdaterKonto();
+                    meddelelse += " landet på " + landetFelt.getTitle() +
+                            " tilhøreres af " + ejerNavn +
+                            ", der betales dem M" + pris;
                 }
                 else
                 {
-                    besked += " er landet på " + landetFelt.getTitle() +
-                            " som de selv ejer.";
+                    meddelelse += " landet på " + landetFelt.getTitle() +
+                            " Som er egen ejendom";
                 }
 
             }
@@ -105,18 +101,18 @@ public class Spil {
                 spiller.getKonto().tagPenge(feltInfo[nyePosition].getPris());
                 plade.købFelt(nyePosition, spiller.getNavn());
                 feltInfo[nyePosition].setEjer(spiller);
-                besked += " har købt " + feltInfo[nyePosition].getFeltNavn() +
+                meddelelse += " har købt " + feltInfo[nyePosition].getFeltNavn() +
                         " for M" + feltInfo[nyePosition].getPris();
             }
         }
         landetFelt.setCar(spiller.getGUI_PLayer(), true);
-        spiller.opdaterSpiller();
-        if (!besked.equals(spiller.getNavn()))
-            plade.sendBesked(besked);
+        spiller.opdaterKonto();
+        if (!meddelelse.equals(spiller.getNavn()))
+            plade.sendMeddelelse(meddelelse);
 
         if(spiller.getKonto().getSaldo() == 0) {
-            plade.sendBesked(spiller.getNavn() + " har tabt spillet..");
-            spiller.setIsLost(true);
+            plade.sendMeddelelse(spiller.getNavn() + " har tabt spillet ):");
+            spiller.setHarTabt(true);
 
             ArrayList<Integer> placeringer = new ArrayList<Integer>();
             for(int i = 0; i < spillere.antalAfSpiller(); i++) {
@@ -124,7 +120,7 @@ public class Spil {
             }
 
             Collections.sort(placeringer);
-            plade.sendBesked("Vinderen er spilleren med beløbet på " + placeringer.get(placeringer.size()-1));
+            plade.sendMeddelelse("Vinderen af spillet er spilleren med beløbet på " + placeringer.get(placeringer.size()-1));
         }
 
     }

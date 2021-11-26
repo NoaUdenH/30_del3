@@ -7,35 +7,42 @@ public class Spiller {
     private Konto konto;
     private String navn;
     private Bil bil;
-    private boolean isLost = false;
+    private boolean harTabt = false;
     private int position;
-    //Maks 12 solgt skilte pr. spiller.
-    //private int solgtSkilte = 12;
     private GUI_Player spiller;
 
-    //private ArrayList<Integer> husPris;
-    public String getNavn() { return navn; }
-    public void setNavn(String navn) {
-        this.navn = navn; }
-    public Bil getBil() { return bil;}
-    public void UpdatePosition(int value) {
-        position = (position + value) % 24;
+    //Constructor for Spiller med 3 variabler, navn, bil og konto
+    public Spiller(String navn, Bil bil, Konto konto) {
+        this.navn = navn;
+        this.bil = bil;
+        this.konto = konto;
+    }
+
+    public String getNavn() {
+        return navn;
+    }
+    public Bil getBil() {
+        return bil;
     }
     public Konto getKonto() {
         return konto;
     }
-    public boolean isLost() {return isLost;}
-    public void setIsLost(boolean isLost){
-        this.isLost = isLost;
+
+    //Metoder bruges til at tjekke om spiller har tabt og sætte at spiller har tabt
+    public boolean getHarTabt() {
+        return harTabt;}
+    public void setHarTabt(boolean harTabt){
+        this.harTabt = harTabt;
     }
 
-    public int getPosition() {return position;}
-    //Opdater spiller position.
+    //Metoder bruges til at hente og opdatere spillers position
+    public int getPosition() {
+        return position;}
     public void opdaterPosition(int position){
         this.position = position;
     }
 
-    //Bruges til at fjerne spiller fra felt.
+    //Metoder bruges til rykke spiller frem på spillepladen
     public GUI_Player getGUI_PLayer() {
         return spiller;
     }
@@ -43,36 +50,13 @@ public class Spiller {
         this.spiller = spiller;
     }
 
-
-    public void opdaterSpiller() {
+    public void opdaterKonto() {
         spiller.setBalance(konto.getSaldo());
-    }
-
-    public Spiller(String navn, Bil bil, Konto konto) {
-        this.navn = navn;
-        this.bil = bil;
-        this.konto = konto;
     }
 
     @Override
     public String toString() {
         return "\t\nSpiller: navn=" + navn + ", konto=" + konto + ", bil=" + bil;
     }
-
-    //Metode for at se nuværende antal solgt skilte.
-    /*
-    public int visAntalSolgtSkilte() {
-        return this.solgtSkilte;
-    }
-    */
-
-    //Metode for spilleregel for maks antal eget ejendomme.
-    /*
-    public int opdaterSolgtSkilte(){
-        this.solgtSkilte= this.solgtSkilte - 1;
-        return this.solgtSkilte;
-    }
-
-     */
 
 }

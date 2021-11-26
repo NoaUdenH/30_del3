@@ -27,9 +27,9 @@ public class Spilleplade {
                 felter[i] = new GUI_Start();
             else if (feltInfo[i].getFeltNavn() == "Chance")
                 felter[i] = new GUI_Chance();
-            else if (feltInfo[i].getFeltNavn() == "Parkeringspladsen")
+            else if (feltInfo[i].getFeltNavn() == "Parkering")
                 felter[i] = new GUI_Refuge();
-            else if (feltInfo[i].getFeltNavn() == "I fængsel")
+            else if (feltInfo[i].getFeltNavn() == "Besøg i fængsel")
                 felter[i] = new GUI_Jail();
             else if (feltInfo[i].getFeltNavn() == "Gå i fængsel")
                 felter[i] = new GUI_Jail();
@@ -68,27 +68,12 @@ public class Spilleplade {
     }
 
     public String getNavn() {
-        return gui.getUserString("Indtast dit navn: ");
+        return gui.getUserString("Skriv dit navn: ");
     }
 
-    //kan bruges hvis alder reglen implementeres.
-    /*
-    public int getAlder() {
-        return gui.getUserInteger("Indtast din alder: ");
+    public int getAntalletAfSpillere() {
+        return gui.getUserInteger("Skriv antallet af spillere", 2, 4);
     }
-
-     */
-
-    public int addAntalSpillere() {
-        return gui.getUserInteger("Vælg antal spillere", 2, 4);
-    }
-
-    /*
-    public void setEjer(Spiller spiller, int position) {
-        ((GUI_Ownable) felter[position]).setOwnerName(spiller.getNavn());
-    }
-
-     */
 
     public GUI_Player addSpillerTilPladen(Spiller spiller) {
         GUI_Player player = new GUI_Player(spiller.getNavn(), spiller.getKonto().getSaldo(), spiller.getBil().getBil());
@@ -96,18 +81,18 @@ public class Spilleplade {
         return player;
     }
 
-    public void sendBesked(String besked)
+    public void sendMeddelelse(String meddelelse)
     {
-        gui.showMessage(besked);
+        gui.showMessage(meddelelse);
     }
 
-    public void setTerning(int værdi)
+    public void setTerning(int øjne)
     {
-        gui.setDie(værdi);
+        gui.setDie(øjne);
     }
 
     public String toString() {
-        return "Spillebræt [felter=" + Arrays.toString(felter) + "]";
+        return "Spilleplade [felter=" + Arrays.toString(felter) + "]";
     }
 
 

@@ -9,6 +9,7 @@ public class Spillerliste {
         this.sListe = new Spiller[antalAfSpiller];
     }
 
+    //Metode til tilføjelse af spiller til liste
     public void addSpiller(Spiller spiller, int i){
         this.sListe[i] = spiller;
     }

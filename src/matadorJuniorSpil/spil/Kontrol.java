@@ -16,6 +16,7 @@ public class Kontrol {
     private Terning terning;
     private Spil spil;
 
+    //Constructor for Kontrol der laver objekter af en spilleplade samt en terning
     public Kontrol() {
         plade = new Spilleplade();
         terning = new Terning();
@@ -23,9 +24,9 @@ public class Kontrol {
     }
 
     public void spilKontrol() {
-        plade.sendBesked("Monopoly Junior");
-        opretSpillere();
+        plade.sendMeddelelse("Velkommen til IOOuterActive's Monopoly Junior");
         spil = new Spil(listeAfSpillere, plade);
+        skabSpillere();
 
         int nuværendeSpillere = -1;
         do {
@@ -33,12 +34,12 @@ public class Kontrol {
             plade.setTerning(terning.kast());
             spil.spillerHandling(terning, listeAfSpillere.getSpiller(nuværendeSpillere));
 
-        } while (!listeAfSpillere.getSpiller(nuværendeSpillere).isLost());
+        } while (!listeAfSpillere.getSpiller(nuværendeSpillere).getHarTabt());
 
     }
 
-    public void opretSpillere() {
-        int spillerAntal = plade.addAntalSpillere();
+    public void skabSpillere() {
+        int spillerAntal = plade.getAntalletAfSpillere();
         listeAfSpillere = new Spillerliste(spillerAntal);
 
         //Opretter spillerliste med input fra bruger gennem GUI.
@@ -52,8 +53,6 @@ public class Kontrol {
                 startPoint = 16;
 
             String navn = plade.getNavn();
-            //Hvis reglen med alder laves skaldet ses sådan ca. ud.
-            // int alder = spillebræt.hentAlder();
             int farve = plade.getBilFarve();
 
             //Spillere vælger hvilken bil(farve) de vil have gennem GUI.
@@ -79,7 +78,7 @@ public class Kontrol {
                 listeAfSpillere.addSpiller(spiller, i);
                 GUI_Player player = plade.addSpillerTilPladen(spiller);
                 spiller.setGUI_Player(player);
-                spiller.opdaterSpiller();
+                spiller.opdaterKonto();
             }
         }
     }
